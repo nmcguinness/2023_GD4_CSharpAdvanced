@@ -21,15 +21,27 @@ namespace _2023_GD4_CSharpAdvanced
 
             p.OnTriggerEnter += HandleTriggerAnimation;
 
+            //to register for new improved GDEvent
+            p.OnPlayerDie.Register(HandlePlayerDie);
+
             //happens inside Player based on some change (OnCollisionEnter)
             p.IncreaseAbility();
 
             //happens inside Player based on colliding with trigger
             p.HandleTriggerCollision();
 
+            //call the die event
+            p.MakePlayerDie();
+
             //in a manager when the manager is destroyed
             p.OnAbilityUpdate -= HandlePlayerAbilityChange;
             p.OnTriggerEnter -= HandleTriggerAnimation;
+            p.OnPlayerDie.Deregister(HandlePlayerDie);
+        }
+
+        private void HandlePlayerDie()
+        {
+            Console.WriteLine("HandlePlayerDie...");
         }
 
         private void HandleTriggerAnimation(object sender, int triggerID)
