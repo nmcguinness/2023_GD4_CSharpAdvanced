@@ -7,12 +7,13 @@ namespace _2023_GD4_CSharpAdvanced
         private static void Main(string[] args)
         {
             new Program().Start();
+            Console.ReadKey();
         }
 
         private void Start()
         {
             //made by adding to scene hierarchy, get access to player
-            Player p = new Player(5);
+            Player p = new Player("max", 5);
 
             //in a manager (or entity) will register interest
             p.OnAbilityUpdate += HandlePlayerAbilityChange;
