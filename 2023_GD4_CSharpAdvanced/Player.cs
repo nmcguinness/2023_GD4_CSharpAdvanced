@@ -8,8 +8,16 @@
         //a flag attached to a list that stores references to subscribed functions
         public event AbilityUpdateHandler OnAbilityUpdate;
 
+        //totally separate event with its own delegate (a list of function refs)
+        public delegate void TriggerEnterHandler(object sender, int triggerID);
+
+        public event TriggerEnterHandler OnTriggerEnter;
+
         private int abilityLevel;
         private string id;
+
+        public int AbilityLevel { get => abilityLevel; set => abilityLevel = value; }
+        public string Id { get => id; set => id = value; }
 
         public Player(string id, int abilityLevel)
         {
@@ -21,6 +29,11 @@
         {
             abilityLevel++;
             OnAbilityUpdate?.Invoke(id, abilityLevel); //abilityLevel, id
+        }
+
+        public void HandleTriggerCollision()
+        {
+            OnTriggerEnter?.Invoke(this, 1001);
         }
     }
 }
