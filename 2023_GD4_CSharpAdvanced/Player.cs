@@ -13,6 +13,9 @@
 
         public event TriggerEnterHandler OnTriggerEnter;
 
+        //its much simpler and faster to add an event using GDEvent
+        public GDEvent OnPlayerDie;
+
         private int abilityLevel;
         private string id;
 
@@ -34,6 +37,11 @@
         public void HandleTriggerCollision()
         {
             OnTriggerEnter?.Invoke(this, 1001);
+        }
+
+        public void MakePlayerDie()
+        {
+            OnPlayerDie?.Invoke();
         }
     }
 }
