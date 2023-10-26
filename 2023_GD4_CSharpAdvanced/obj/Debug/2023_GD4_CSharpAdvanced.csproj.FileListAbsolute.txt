@@ -1,0 +1,8 @@
+D:\Work\2023-24\3DGD\Repos\2023_GD4_CSharpAdvanced\2023_GD4_CSharpAdvanced\bin\Debug\2023_GD4_CSharpAdvanced.exe.config
+D:\Work\2023-24\3DGD\Repos\2023_GD4_CSharpAdvanced\2023_GD4_CSharpAdvanced\bin\Debug\2023_GD4_CSharpAdvanced.exe
+D:\Work\2023-24\3DGD\Repos\2023_GD4_CSharpAdvanced\2023_GD4_CSharpAdvanced\bin\Debug\2023_GD4_CSharpAdvanced.pdb
+D:\Work\2023-24\3DGD\Repos\2023_GD4_CSharpAdvanced\2023_GD4_CSharpAdvanced\obj\Debug\2023_GD4_CSharpAdvanced.csproj.AssemblyReference.cache
+D:\Work\2023-24\3DGD\Repos\2023_GD4_CSharpAdvanced\2023_GD4_CSharpAdvanced\obj\Debug\2023_GD4_CSharpAdvanced.csproj.SuggestedBindingRedirects.cache
+D:\Work\2023-24\3DGD\Repos\2023_GD4_CSharpAdvanced\2023_GD4_CSharpAdvanced\obj\Debug\2023_GD4_CSharpAdvanced.csproj.CoreCompileInputs.cache
+D:\Work\2023-24\3DGD\Repos\2023_GD4_CSharpAdvanced\2023_GD4_CSharpAdvanced\obj\Debug\2023_GD4_CSharpAdvanced.exe
+D:\Work\2023-24\3DGD\Repos\2023_GD4_CSharpAdvanced\2023_GD4_CSharpAdvanced\obj\Debug\2023_GD4_CSharpAdvanced.pdb
