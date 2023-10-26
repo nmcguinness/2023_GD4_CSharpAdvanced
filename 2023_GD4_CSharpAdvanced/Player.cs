@@ -1,5 +1,12 @@
 ﻿namespace _2023_GD4_CSharpAdvanced
 {
+    public class EventParams
+    {
+        public object sender;
+        public int elapsedTime;
+        public object[] parameters;
+    }
+
     public class Player
     {
         //list storing function references
