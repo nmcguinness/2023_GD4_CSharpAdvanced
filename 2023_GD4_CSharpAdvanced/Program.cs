@@ -24,10 +24,10 @@ namespace _2023_GD4_CSharpAdvanced
             p.OnAbilityUpdate -= HandlePlayerAbilityChange;
         }
 
-        private void HandlePlayerAbilityChange()
+        private void HandlePlayerAbilityChange(string a, int b)
         {
             Console.Beep(1000, 2000);
-            Console.WriteLine("HandlePlayerAbilityChange...");
+            Console.WriteLine($"HandlePlayerAbilityChange...({a},{b})");
         }
     }
 }

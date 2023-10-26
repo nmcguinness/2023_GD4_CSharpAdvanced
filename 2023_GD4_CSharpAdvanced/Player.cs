@@ -3,22 +3,24 @@
     public class Player
     {
         //list storing function references
-        public delegate void AbilityUpdateHandler();
+        public delegate void AbilityUpdateHandler(string id, int level);
 
         //a flag attached to a list that stores references to subscribed functions
         public event AbilityUpdateHandler OnAbilityUpdate;
 
         private int abilityLevel;
+        private string id;
 
-        public Player(int abilityLevel)
+        public Player(string id, int abilityLevel)
         {
+            this.id = id;
             this.abilityLevel = abilityLevel;
         }
 
         public void IncreaseAbility()
         {
             abilityLevel++;
-            OnAbilityUpdate?.Invoke();
+            OnAbilityUpdate?.Invoke(id, abilityLevel); //abilityLevel, id
         }
     }
 }
