@@ -14,7 +14,7 @@
         public event TriggerEnterHandler OnTriggerEnter;
 
         //its much simpler and faster to add an event using GDEvent
-        public GDEvent OnPlayerDie;
+        public GDEvent OnPlayerDie = new GDEvent();
 
         private int abilityLevel;
         private string id;
