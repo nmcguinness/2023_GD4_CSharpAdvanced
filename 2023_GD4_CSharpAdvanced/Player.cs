@@ -16,6 +16,9 @@
         //its much simpler and faster to add an event using GDEvent
         public GDEvent OnPlayerDie = new GDEvent();
 
+        //an example of multi-param event
+        public GDEventParams<int> OnLevelComplete = new GDEventParams<int>();
+
         private int abilityLevel;
         private string id;
 
@@ -42,6 +45,11 @@
         public void MakePlayerDie()
         {
             OnPlayerDie?.Invoke();
+        }
+
+        public void HandleLevelComplete()
+        {
+            OnLevelComplete?.Invoke(60000); //60 secs to complete
         }
     }
 }

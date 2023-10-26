@@ -37,6 +37,18 @@ namespace _2023_GD4_CSharpAdvanced
             p.OnAbilityUpdate -= HandlePlayerAbilityChange;
             p.OnTriggerEnter -= HandleTriggerAnimation;
             p.OnPlayerDie.Deregister(HandlePlayerDie);
+
+            /*********************************************************/
+            p.OnLevelComplete.Register(HandleLevelComplete);
+
+            p.HandleLevelComplete();
+
+            p.OnLevelComplete.Deregister(HandleLevelComplete);
+        }
+
+        private void HandleLevelComplete(int completionTimeSecs)
+        {
+            Console.WriteLine($"HandleLevelComplete...{completionTimeSecs}");
         }
 
         private void HandlePlayerDie()
