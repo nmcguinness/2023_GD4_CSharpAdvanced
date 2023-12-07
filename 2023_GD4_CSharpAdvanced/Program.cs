@@ -50,26 +50,27 @@ namespace _2023_GD4_CSharpAdvanced
         private async void DemoAsyncAwaitReturn()
         {
             Console.WriteLine("DemoAsyncAwaitReturn::doing some work...");
-
             Task<int> queryTask = ExecuteDBQueryNonBlocking();
 
             await queryTask;
 
             Console.WriteLine("DemoAsyncAwaitReturn::doing more work...");
-
             Console.WriteLine($"DB says: {queryTask.Result}");
         }
 
         public async Task<int> ExecuteDBQueryNonBlocking()
         {
             Console.WriteLine("ExecuteDBQueryNonBlocking::in...");
-
-            await Task.Delay(1000);
-
+            await Task.Delay(5000);
             Console.WriteLine("ExecuteDBQueryNonBlocking::out...");
-
             return 100;
         }
+
+        /*
+         Exercise:
+         - Generate 3 async methods (with random Delay()) where each method does NOT return a value
+         - Wait for all methods to complete before printing out a string ("ALL COMPLETE")
+         */
 
         private void DemoAsyncAwaitAll()
         {
