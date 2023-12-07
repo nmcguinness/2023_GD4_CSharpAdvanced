@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace _2023_GD4_CSharpAdvanced
 {
@@ -11,6 +12,36 @@ namespace _2023_GD4_CSharpAdvanced
         }
 
         private void Start()
+        {
+            //Console.WriteLine("\n********** DemoEvents **********");
+            //DemoEvents();
+
+            Console.WriteLine("\n********** DemoAsync **********");
+            DemoAsync();
+
+            //Console.WriteLine("\n********** DemoAsyncAwaitAll **********");
+            //DemoAsyncAwaitAll();
+
+            //Console.WriteLine("\n********** DemoAsyncAwaitReturn **********");
+            //DemoAsyncAwaitReturn();
+        }
+
+        private void DemoAsyncAwaitReturn()
+        {
+            //  throw new NotImplementedException();
+        }
+
+        private void DemoAsyncAwaitAll()
+        {
+            //  throw new NotImplementedException();
+        }
+
+        private void DemoAsync()
+        {
+            //  throw new NotImplementedException();
+        }
+
+        private void DemoEvents()
         {
             //made by adding to scene hierarchy, get access to player
             Player p = new Player("max", 5);
