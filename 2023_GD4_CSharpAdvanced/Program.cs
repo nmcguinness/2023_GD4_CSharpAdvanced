@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace _2023_GD4_CSharpAdvanced
@@ -104,6 +105,36 @@ namespace _2023_GD4_CSharpAdvanced
         {
             await Task.Delay(delay);
             Console.WriteLine("TaskOne::out...");
+        }
+
+        /*
+        Exercise:
+        - Generate 3 async methods (with random Delay()) where each method returns a value
+        - Wait for all methods to complete before printing out the sum
+         */
+
+        public async void FindNextTarget(List<Task> tasks)
+        {
+            Console.WriteLine("All tasks are starting...");
+            Task<string> t1 = FindWeakestEnemy();
+            Task<string> t2 = FindWeakestVehicle();
+            // List<Task> myTasks = new List<Task> { t1, t2 };
+            await Task.WaitAny(t1, t2);
+            Console.WriteLine("All tasks are done...");
+        }
+
+        public async Task<string> FindWeakestEnemy() //List<GameObject> objects, Comparator<GameObject> sortComparator
+        {
+            await Task.Delay(2500);
+            Console.WriteLine("FindWeakestEnemy::out...");
+            return "enemy 14";
+        }
+
+        public async Task<string> FindWeakestVehicle()
+        {
+            await Task.Delay(1500);
+            Console.WriteLine("FindWeakestVehicle::out...");
+            return "Tank 5";
         }
 
         #region Events
