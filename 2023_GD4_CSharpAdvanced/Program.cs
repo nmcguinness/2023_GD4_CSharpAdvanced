@@ -16,17 +16,17 @@ namespace _2023_GD4_CSharpAdvanced
             //Console.WriteLine("\n********** DemoEvents **********");
             //DemoEvents();
 
-            Console.WriteLine("\n********** DemoBlockingWait **********");
-            DemoBlockingWait();
+            //Console.WriteLine("\n********** DemoBlockingWait **********");
+            //DemoBlockingWait();
 
-            Console.WriteLine("\n********** DemoAsync **********");
-            DemoAsync();
+            //Console.WriteLine("\n********** DemoAsync **********");
+            //DemoAsync();
 
-            Console.WriteLine("\n********** DemoAsyncAwaitReturn **********");
-            DemoAsyncAwaitReturn();
+            //Console.WriteLine("\n********** DemoAsyncAwaitReturn **********");
+            //DemoAsyncAwaitReturn();
 
             //Console.WriteLine("\n********** DemoAsyncAwaitAll **********");
-            //DemoAsyncAwaitAll();
+            DemoAsyncAwaitAllAsync();
         }
 
         private void DemoBlockingWait()
@@ -66,17 +66,6 @@ namespace _2023_GD4_CSharpAdvanced
             return 100;
         }
 
-        /*
-         Exercise:
-         - Generate 3 async methods (with random Delay()) where each method does NOT return a value
-         - Wait for all methods to complete before printing out a string ("ALL COMPLETE")
-         */
-
-        private void DemoAsyncAwaitAll()
-        {
-            //  throw new NotImplementedException();
-        }
-
         private void DemoAsync()
         {
             Console.WriteLine("DemoAsync::doing some work...");
@@ -90,6 +79,34 @@ namespace _2023_GD4_CSharpAdvanced
             await Task.Delay(2000);
             Console.WriteLine("DoSomethingNonBlocking::out...");
         }
+
+        /*
+        Exercise:
+        - Generate 3 async methods (with random Delay()) where each method does NOT return a value
+        - Wait for all methods to complete before printing out a string ("ALL COMPLETE")
+        */
+
+        private async void DemoAsyncAwaitAllAsync()
+        {
+            Console.WriteLine("All tasks are starting...");
+            await TaskOne(1000);
+            await TaskTwo(3000);
+            Console.WriteLine("All tasks are done...");
+        }
+
+        public async Task TaskOne(int delay)
+        {
+            await Task.Delay(delay);
+            Console.WriteLine("TaskOne::out...");
+        }
+
+        public async Task TaskTwo(int delay)
+        {
+            await Task.Delay(delay);
+            Console.WriteLine("TaskOne::out...");
+        }
+
+        #region Events
 
         private void DemoEvents()
         {
@@ -160,5 +177,7 @@ namespace _2023_GD4_CSharpAdvanced
             // Console.Beep(1000, 2000);
             Console.WriteLine($"HandlePlayerAbilityChange...({a},{b})");
         }
+
+        #endregion Events
     }
 }
