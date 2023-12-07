@@ -16,6 +16,9 @@ namespace _2023_GD4_CSharpAdvanced
             //Console.WriteLine("\n********** DemoEvents **********");
             //DemoEvents();
 
+            Console.WriteLine("\n********** DemoBlockingWait **********");
+            DemoBlockingWait();
+
             Console.WriteLine("\n********** DemoAsync **********");
             DemoAsync();
 
@@ -24,6 +27,24 @@ namespace _2023_GD4_CSharpAdvanced
 
             //Console.WriteLine("\n********** DemoAsyncAwaitReturn **********");
             //DemoAsyncAwaitReturn();
+        }
+
+        private void DemoBlockingWait()
+        {
+            Console.WriteLine("doing some work...");
+
+            DoSomethingBlocking();
+
+            Console.WriteLine("doing more work...");
+        }
+
+        private void DoSomethingBlocking()
+        {
+            Console.WriteLine("in...");
+
+            System.Threading.Thread.Sleep(2000);
+
+            Console.WriteLine("out...");
         }
 
         private void DemoAsyncAwaitReturn()
