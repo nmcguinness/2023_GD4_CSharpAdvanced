@@ -22,11 +22,11 @@ namespace _2023_GD4_CSharpAdvanced
             Console.WriteLine("\n********** DemoAsync **********");
             DemoAsync();
 
+            Console.WriteLine("\n********** DemoAsyncAwaitReturn **********");
+            DemoAsyncAwaitReturn();
+
             //Console.WriteLine("\n********** DemoAsyncAwaitAll **********");
             //DemoAsyncAwaitAll();
-
-            //Console.WriteLine("\n********** DemoAsyncAwaitReturn **********");
-            //DemoAsyncAwaitReturn();
         }
 
         private void DemoBlockingWait()
@@ -47,9 +47,28 @@ namespace _2023_GD4_CSharpAdvanced
             Console.WriteLine("out...");
         }
 
-        private void DemoAsyncAwaitReturn()
+        private async void DemoAsyncAwaitReturn()
         {
-            //  throw new NotImplementedException();
+            Console.WriteLine("DemoAsyncAwaitReturn::doing some work...");
+
+            Task<int> queryTask = ExecuteDBQueryNonBlocking();
+
+            await queryTask;
+
+            Console.WriteLine("DemoAsyncAwaitReturn::doing more work...");
+
+            Console.WriteLine($"DB says: {queryTask.Result}");
+        }
+
+        public async Task<int> ExecuteDBQueryNonBlocking()
+        {
+            Console.WriteLine("ExecuteDBQueryNonBlocking::in...");
+
+            await Task.Delay(1000);
+
+            Console.WriteLine("ExecuteDBQueryNonBlocking::out...");
+
+            return 100;
         }
 
         private void DemoAsyncAwaitAll()
@@ -59,7 +78,16 @@ namespace _2023_GD4_CSharpAdvanced
 
         private void DemoAsync()
         {
-            //  throw new NotImplementedException();
+            Console.WriteLine("DemoAsync::doing some work...");
+            DoSomethingNonBlocking();
+            Console.WriteLine("DemoAsync::doing more work...");
+        }
+
+        private async void DoSomethingNonBlocking()
+        {
+            Console.WriteLine("DoSomethingNonBlocking::in...");
+            await Task.Delay(2000);
+            Console.WriteLine("DoSomethingNonBlocking::out...");
         }
 
         private void DemoEvents()
@@ -111,7 +139,7 @@ namespace _2023_GD4_CSharpAdvanced
         private void HandleTriggerAnimation(object sender, int triggerID)
         {
             Player p = sender as Player; //as will set to null on fail
-            //Player p1 = (Player)sender; //old-style typecast that throws exception on fail
+                                         //Player p1 = (Player)sender; //old-style typecast that throws exception on fail
 
             if (p != null)
             {
